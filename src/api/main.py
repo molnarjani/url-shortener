@@ -44,7 +44,7 @@ def statistics(short_key: str) -> StatisticsAPIResponse:
     """Returns view statistics for a shortened URL"""
     short_url_object = get_short_url_or_404(short_key)
     short_url_response = StatisticsAPIResponse(
-        url=SHORT_URL_BASE + short_url_object.url, views=short_url_object.view_count
+        url=short_url_object.url, views=short_url_object.view_count
     )
     return short_url_response
 

@@ -1,6 +1,8 @@
 import string
 import random
 
+from fastapi import HTTPException
+
 from .models import ShortURL
 from .types import ShortURLType
 
@@ -17,8 +19,8 @@ def get_short_url_or_404(short_key: str) -> ShortURLType:
     try:
         short_url_object = next(ShortURL.query(short_key))
     except StopIteration:
-        return HTTPException(
-            status_code=404, detail=f"URL for short key {short_key} not found!"
+        raise HTTPException(
+            status_code=404, detail=f"URL for short key: '{short_key}' not found!"
         )
 
     return short_url_object
