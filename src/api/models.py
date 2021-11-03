@@ -8,16 +8,18 @@ class ShortURL(Model):
     """
     Database representation of short urls
     """
+
     class Meta:
-        table_name = 'short_urls'
-        region = 'us-west-1'
+        table_name = "short_urls"
+        region = "us-west-1"
         host = DYNAMO_DB_ENDPOINT_URL
+
     key = UnicodeAttribute(hash_key=True)
     url = UnicodeAttribute()
     view_count = NumberAttribute(default=0)
 
     def validate_key_uniqueness(self, value: str) -> None:
-        """ Check if key is unique by querying from dynamoDB """
+        """Check if key is unique by querying from dynamoDB"""
         try:
             item = next(self.query(value))
             if item:
@@ -25,16 +27,10 @@ class ShortURL(Model):
         except StopIteration:
             return
 
-
     def save(self, *args, **kwargs) -> None:
         self.validate_key_uniqueness(self.key)
         super().save(*args, **kwargs)
 
-    
     @classmethod
     def increment_view_count(cls, instance):
-        instance.update(
-            actions=[
-                cls.view_count.set(instance.view_count + 1)
-            ]
-        )
+        instance.update(actions=[cls.view_count.set(instance.view_count + 1)])

@@ -36,28 +36,26 @@ def shorten_url(data: ShortenAPIRequest) -> ShortenAPIResponse:
 
         raise HTTPException(status_code=400, detail="Short key has to be unique!")
 
-
     short_url_response = ShortenAPIResponse(url=SHORT_URL_BASE + short_url_object.key)
     return short_url_response
 
 
 @app.get("/statistics/{short_key}")
 def shorten_url(short_key: str) -> StatisticsAPIResponse:
-    """ Returns view statistics for a shortened URL """
+    """Returns view statistics for a shortened URL"""
     short_url_object = get_short_url_or_404(short_key)
     short_url_response = StatisticsAPIResponse(
-        url=SHORT_URL_BASE + short_url_object.url,
-        views=short_url_object.view_count
+        url=SHORT_URL_BASE + short_url_object.url, views=short_url_object.view_count
     )
     return short_url_response
 
 
 @app.get("/{short_key}")
 def redirect_to_url(short_key: str):
-    """ Resolves a short key url and redirects to the URL
-        Increases the view count by one in case the url can be resolved
+    """Resolves a short key url and redirects to the URL
+    Increases the view count by one in case the url can be resolved
     """
     short_url_object = get_short_url_or_404(short_key)
     ShortURL.increment_view_count(short_url_object)
-    
+
     return RedirectResponse(short_url_object.url)
