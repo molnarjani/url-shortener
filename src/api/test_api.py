@@ -87,7 +87,7 @@ class TestStatisticsAPI(unittest.TestCase):
         """Retrieving statisctics of not existing short URLs results in 404"""
 
         # Visit short URL
-        response = self.client.get(f"/notexisting")
+        response = self.client.get("/notexisting")
         content = json.loads(response._content)
         assert response.status_code == 404
-        assert content["detail"] == f"URL for short key: 'notexisting' not found!"
+        assert content["detail"] == "URL for short key: 'notexisting' not found!"

@@ -1,4 +1,3 @@
-from typing import Optional
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import RedirectResponse
 
