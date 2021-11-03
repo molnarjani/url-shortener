@@ -1,5 +1,8 @@
 # url-shortener
-A simple URL shortener service
+A url shortener app
+
+<img src="https://user-images.githubusercontent.com/4608924/140231249-dab0be8b-3ba3-46a3-889a-31ccb2421010.png" width=400px/>
+
 
 Wiki:
 - [Development](https://github.com/molnarjani/url-shortener/wiki/Development)
