@@ -5,6 +5,7 @@ Stack:
 - Python3
 - [PynamoDB - DynamoDB interface](https://pynamodb.readthedocs.io/en/latest/)
 - [FastAPI - Webframework](https://fastapi.tiangolo.com/)
+- [Pydanic - API data validation](https://pydantic-docs.helpmanual.io/)
 - [Poetry - Dependency Manager](https://python-poetry.org/) 
 
 <hr/>
