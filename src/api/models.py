@@ -27,10 +27,10 @@ class ShortURL(Model):
         except StopIteration:
             return
 
-    def save(self, *args, **kwargs) -> None:
+    def save(self, *args, **kwargs):
         self.validate_key_uniqueness(self.key)
         super().save(*args, **kwargs)
 
     @classmethod
-    def increment_view_count(cls, instance):
+    def increment_view_count(cls, instance) -> None:
         instance.update(actions=[cls.view_count.set(instance.view_count + 1)])

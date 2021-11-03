@@ -3,12 +3,6 @@ from typing import Optional
 from pydantic import BaseModel, HttpUrl, ValidationError, validator
 
 
-class ShortURLType(BaseModel):
-    key: str
-    url: HttpUrl
-    view_count: int
-
-
 class ShortenAPIRequest(BaseModel):
     url: HttpUrl
     key: Optional[str] = None
