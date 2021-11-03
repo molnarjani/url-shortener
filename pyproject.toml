@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "url-shortener"
+version = "0.1.0"
+description = "A url shortener service"
+authors = ["Janos Molnar <janosmolnar1001@gmail.com>"]
+license = "Apach2"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+boto3 = "^1.19.7"
+fastapi = "^0.70.0"
+uvicorn = "^0.15.0"
+pynamodb = "^5.1.0"
+pydantic = "^1.8.2"
+
+[tool.poetry.dev-dependencies]
+mock = "^4.0.3"
+pytest = "^6.2.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+start = "poetry run uvicorn src.api.main:app --reload"
