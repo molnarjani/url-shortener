@@ -1,8 +1,17 @@
 # url-shortener
 A url shortener app
 
+Stack:
+- Python3
+- [PynamoDB - DynamoDB interface](https://pynamodb.readthedocs.io/en/latest/)
+- [FastAPI - Webframework](https://fastapi.tiangolo.com/)
+- [Poetry - Dependency Manager](https://python-poetry.org/) 
+
+<hr/>
+Architecure:
 <img src="https://user-images.githubusercontent.com/4608924/140231249-dab0be8b-3ba3-46a3-889a-31ccb2421010.png" width=400px/>
 
+<hr/>
 
 Wiki:
 - [Development](https://github.com/molnarjani/url-shortener/wiki/Development)
