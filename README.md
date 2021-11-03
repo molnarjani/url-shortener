@@ -9,6 +9,6 @@ Wiki:
   - [database](https://github.com/molnarjani/url-shortener/wiki/database)
   - [hashing algorithm](https://github.com/molnarjani/url-shortener/wiki/hashing-algorithm)
 - [Specification](https://github.com/molnarjani/url-shortener/wiki/Specification)
-  - [URL redirect service](https://github.com/molnarjani/url-shortener/wiki/url-redirect-service)
+  - [URL redirect service](https://github.com/molnarjani/url-shortener/wiki/url-redirect-endpoint)
   - [shorten API](https://github.com/molnarjani/url-shortener/wiki/shorten)
   - [statistics API](https://github.com/molnarjani/url-shortener/wiki/statistics)
