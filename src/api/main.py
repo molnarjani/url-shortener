@@ -10,6 +10,9 @@ from .types import ShortenAPIRequest, ShortenAPIResponse, StatisticsAPIResponse
 
 app = FastAPI()
 
+# Make sure database table exists
+ShortURL.create_table(read_capacity_units=1, write_capacity_units=1)
+
 
 @app.post("/shorten")
 def shorten_url(data: ShortenAPIRequest) -> ShortenAPIResponse:
