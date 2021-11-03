@@ -1,3 +1,4 @@
+import re
 from typing import Optional
 from pydantic import BaseModel, HttpUrl, ValidationError, validator
 
@@ -21,9 +22,24 @@ class ShortenAPIRequest(BaseModel):
 
         return value
 
+    class Config:
+        schema_extra = {
+            "example": {
+                "url": "https://facebook.com",
+                "key": "myshortkey",
+            }
+        }
+
 
 class ShortenAPIResponse(BaseModel):
     url: HttpUrl
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "url": "https://tier.app/myshortkey",
+            }
+        }
 
 
 class StatisticsAPIResponse(BaseModel):

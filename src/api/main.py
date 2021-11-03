@@ -1,4 +1,3 @@
-import re
 from typing import Optional
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import RedirectResponse
@@ -41,7 +40,7 @@ def shorten_url(data: ShortenAPIRequest) -> ShortenAPIResponse:
 
 
 @app.get("/statistics/{short_key}")
-def shorten_url(short_key: str) -> StatisticsAPIResponse:
+def statistics(short_key: str) -> StatisticsAPIResponse:
     """Returns view statistics for a shortened URL"""
     short_url_object = get_short_url_or_404(short_key)
     short_url_response = StatisticsAPIResponse(
