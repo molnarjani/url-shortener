@@ -12,6 +12,7 @@ fastapi = "^0.70.0"
 uvicorn = "^0.15.0"
 pynamodb = "^5.1.0"
 pydantic = "^1.8.2"
+requests = "^2.26.0"
 
 [tool.poetry.dev-dependencies]
 mock = "^4.0.3"
