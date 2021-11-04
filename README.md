@@ -25,3 +25,23 @@ Wiki:
   - [URL redirect endpoint](https://github.com/molnarjani/url-shortener/wiki/url-redirect-endpoint)
   - [shorten API](https://github.com/molnarjani/url-shortener/wiki/shorten)
   - [statistics API](https://github.com/molnarjani/url-shortener/wiki/statistics)
+
+<hr/>
+
+TODOs and ideas:
+- Add tooling:
+  - black auto-formatting hooks
+  - pyflakes / flake8 check hooks
+  - pytest checks
+  - pydocstyle checks
+  - CI build system
+  - Running multiple workers with gunicorn or some other WSGI server
+  - maybe make the whole thing serverless (AWS Lambda + API gateway)
+  - deployment system (maybe ArgoCD)
+
+- Improve tests:
+  - currently the test drob the DB manually this could be solved better with some scripting or tooling
+  - tests could be run in docker with a clean container, while devs can keep their localDB
+
+- Add authentication
+- Add API throttling
