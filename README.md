@@ -45,3 +45,5 @@ TODOs and ideas:
 
 - Add authentication
 - Add API throttling
+
+- Make use of pseudo-threads for DB calls using [InPynamoDB]("https://opensourcelibs.com/lib/inpynamodb")
